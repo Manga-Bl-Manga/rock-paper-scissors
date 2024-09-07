@@ -1,5 +1,5 @@
 console.log("hello brave!");
-
+let humanChoise ;
 function getComputerChoise()
 {
     let computerChoise;
@@ -13,20 +13,34 @@ function getComputerChoise()
 console.log("test: " + getComputerChoise());
 
 function getHumanChoice(){
-    let humanChoise = prompt("Choose and type: Rock | Paper | Scissors");
+    //let humanChoise = prompt("Choose and type: Rock | Paper | Scissors");
     humanChoise = humanChoise.toUpperCase();
     return humanChoise;
 }
 
+function setRock(){
+    humanChoise = "ROCK"
+}
+
+function setPaper() {
+    humanChoise = "PAPER";
+}
+
+function setScissors() {
+    humanChoise = "SCISSORS";
+}
+
 function playRound(){
     let computerChoise = getComputerChoise();
-    let humanChoise = getHumanChoice();
+    //let humanChoise = getHumanChoice();
     computerChoise = computerChoise.toUpperCase();
     console.log("The computer picked: " + computerChoise + " and the human",
         " picked: " + humanChoise);
     let playerWon = false;
     let draw = false;
     let manyka = false;
+    
+    
 
     // all the cases
     if (humanChoise == "ROCK" && computerChoise == "SCISSORS"){
@@ -46,16 +60,20 @@ function playRound(){
 
     // handles winning and losing
     if (playerWon && !draw && !manyka){
-        console.log("You won!")
+        console.log("You won!");
+        document.getElementsByClassName("result")[0].innerHTML = "You won!";
     }
 
     if (!playerWon && !draw && !manyka){
-        console.log("You lost! ( 3shan 5awal :) )")
+        console.log("You lost! ( 3shan 5awal :) )");
+        document.getElementsByClassName("result")[0].innerHTML = "You lost! ( 3shan 5awal :) )"
     }
 
 
-    if (draw)console.log("Draw!")
-
+    if (draw){
+        console.log("Draw!");
+        document.getElementsByClassName("result")[0].innerHTML = "Draw!";
+    }
     // manages Aly :(  DELETE DELETE DELETE ---------------------------------
 
     if (humanChoise !== "ROCK" && humanChoise !== "PAPER" && humanChoise !== "SCISSORS") {
@@ -69,4 +87,3 @@ function playRound(){
 
 }
 
-playRound();

@@ -1,0 +1,54 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #C8A1E0;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E2BFD9;
+    border-radius: 16px;
+    margin: 20px;
+    padding: 20px;
+    flex-grow: 0;
+    font-size: 36px;
+    font: Roboto;
+    font-weight: bold; 
+    color: #C8A1E0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    width: 100px;
+    background-color: #C8A1E0;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #674188;
+    color: white;
+}
+
+/* Active state (when clicked) */
+button:active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.result{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    gap: 20px;
+    border-radius: 16px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #F7EFE5;
+    color: #C8A1E0;
+}
