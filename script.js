@@ -1,5 +1,7 @@
 console.log("hello brave!");
 let humanChoise ;
+let gl_H_score = 0;
+let gl_C_score = 0;
 function getComputerChoise()
 {
     let computerChoise;
@@ -38,7 +40,7 @@ function playRound(){
         " picked: " + humanChoise);
     let playerWon = false;
     let draw = false;
-    let manyka = false;
+    let manga = false;
     
     
 
@@ -59,31 +61,44 @@ function playRound(){
     }
 
     // handles winning and losing
-    if (playerWon && !draw && !manyka){
+    if (playerWon && !draw && !manga){
+        gl_H_score++;
         console.log("You won!");
-        document.getElementsByClassName("result")[0].innerHTML = "You won!";
+        document.getElementsByClassName("result")[0].textContent = "You won! - " + gl_H_score + ':' + gl_C_score;
     }
 
-    if (!playerWon && !draw && !manyka){
-        console.log("You lost! ( 3shan 5awal :) )");
-        document.getElementsByClassName("result")[0].innerHTML = "You lost! ( 3shan 5awal :) )"
+    if (!playerWon && !draw && !manga){
+        gl_C_score++;
+        console.log("You lost! ;) - " + gl_H_score + ':' + gl_C_score);
+        document.getElementsByClassName("result")[0].textContent = "You lost! - " + gl_H_score + ':' + gl_C_score;
+
+        
     }
 
 
     if (draw){
         console.log("Draw!");
-        document.getElementsByClassName("result")[0].innerHTML = "Draw!";
+        document.getElementsByClassName("result")[0].textContent = "Draw! - " + gl_H_score + ':' + gl_C_score;
     }
-    // manages Aly :(  DELETE DELETE DELETE ---------------------------------
+    // manages manga
 
     if (humanChoise !== "ROCK" && humanChoise !== "PAPER" && humanChoise !== "SCISSORS") {
-        manyka = true;
+        manga = true;
     }
     
 
-    if (manyka){
-        console.log("اختار عدل يا خول")
+    if (manga){
+        console.log("<3 اختار عدل يا قمر")
     }
 
 }
+
+function playGame(){
+    for (let i = 5; i > 0; i--){
+        playRound();
+        console.log("round " + i + " has been played");
+    }
+}
+
+
 
